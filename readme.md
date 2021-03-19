@@ -1,6 +1,6 @@
-# Book Store
+# Book Shop
 
-Book Store is a web based app built whilst studying the book Build An API with Laravel (2019).
+Book Shop is a web based app built whilst studying the book Build An API with Laravel (2019).
 
 ## Description
 
