@@ -1,0 +1,48 @@
+version: '3'
+
+networks:
+  laravel:
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: bookshop_nginx
+    ports:
+      - "8088:80"
+    volumes:
+      - ${PROJECT_DIRECTORY}:/var/www/html
+      - ${PROJECT_DIRECTORY}/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - laravel
+
+  mysql:
+    networks:
+      - laravel
+    image: mysql:5.7.29
+    container_name: bookshop_mysql
+    restart: unless-stopped
+    ports:
+      - "4307:3306"
+    tty: true
+    volumes:
+      - ${PROJECT_DIRECTORY}/db/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_USER_PASS}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+  php:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: bookshop_php
+    volumes:
+      - ${PROJECT_DIRECTORY}:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - laravel
