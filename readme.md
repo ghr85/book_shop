@@ -1,20 +1,10 @@
-# Villous
+# Book Store
 
-Villous is a web based app designed to make the monthly ordering of NHS Scotland Gluten Free prescription products simpler
-and more convenient.
+Book Store is a web based app built whilst studying the book Build An API with Laravel (2019).
 
 ## Description
 
-Villous was conceived as a solution after noting that pharmacies who offered monthly prescriptions of gluten free products
-to those suffering from coeliac disease were still taking pen and paper orders and using a local hard copy i.e. print out
-of both the order form and the catalogue to choose products from, this was then input to a computer manually. Every month
-this involves the patient sitting at the cashier desk and navigating through leaves of paper - some of he items upon which
-were crossed out depending on availability.
 
-A web based app which can be accessed on desktop/smartphone would allow patients to create orders with ease and items which were
-unavailable would simply be omitted from display until such time as they were available. The idea would be then that these
-orders can be printed out or pdf emailed to the pharmacy - alternatively if the NHS had an API then Villous would aim to post
-patient's orders directly to that API.
 
 ## Pre-requisites
 
