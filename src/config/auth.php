@@ -32,6 +32,7 @@ return [
     | mechanisms used by this application to persist your user's data.
     |
     | Supported: "session", "token"
+    | Here we can also use Laravel Passport to utilise oAuth for authenticating
     |
     */
 
@@ -42,7 +43,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
             'hash' => false,
         ],
