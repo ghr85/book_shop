@@ -2,8 +2,8 @@ db/mysql/*
 !db/mysql/.gitkeep
 src/node_modules
 /public/hot
-/public/storage
-/storage/*.key
+src/public/storage
+src/storage/*.key
 src/vendor
 .env
 !.env.example
